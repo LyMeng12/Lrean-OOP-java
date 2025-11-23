@@ -1,24 +1,27 @@
+import java.util.Scanner;
+
 public class Encapsulation {
-    private double balance;
+    private int age;
 
-    public void deposit(double balance){
-        this.balance += balance;
+    public void setAge(int age){
+        this.age = age;
     }
 
-    public void withdraw(double balance){
-        this.balance -= balance;
-    }
+    public int getAge(){
+        if (age < 0){
+            System.out.println("Age cannot be negative");
+            return 0;
+        }else if (age >0){
 
-
-    public double getBalance() {
-        return balance;
+        }return age;
     }
 
     public static void main(String[] args) {
-        Encapsulation encapsulation = new Encapsulation();
-        encapsulation.deposit(3000);
-        encapsulation.withdraw(2000);
-
-        System.out.println(encapsulation.getBalance());
+        Scanner sc = new Scanner(System.in);
+        Encapsulation em = new Encapsulation();
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+        em.setAge(age);
+        System.out.println(em.getAge());
     }
 }

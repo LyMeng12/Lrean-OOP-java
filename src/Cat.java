@@ -1,5 +1,7 @@
-public class Cat extends Animal{
-    public String sound(){
-        return "Meow";
+public class Cat{
+    int Age=6;
+    class Animals{
+        int age=8;
     }
+
 }

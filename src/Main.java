@@ -1,30 +1,16 @@
-import java.util.Scanner;
+import java.time.LocalDate; // import the LocalDate class
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main extends Animal{
-//    OOP Inheritance and Polymorphism
+public class Main {
+    String Brand = "Toyota";
+    int year = 2020;
 
-
+    public static void driv(){
+        System.out.println("car is drive!");
+    }
     public static void main(String[] args) {
-        Animal animal = new Animal();
-        Animal cat = new Cat();
-        Animal dog = new Dog();
-
-
-        animal.sound();
-        animal.sound();
-        dog.sound();
-        System.out.println("++++++++++++++++++");
-        cat.setname("KIKI");
-        dog.setname("KCKC");
-        animal.setname("BXBX");
-        System.out.println(animal.getname());
-        System.out.println(cat.getname());
-        System.out.println(dog.getname());
-
-
-
-
+        Main car = new Main();
+        System.out.println(car.Brand);
+        System.out.println(car.year);
+        car.driv();
     }
 }

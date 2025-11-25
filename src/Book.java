@@ -1,19 +1,13 @@
-public class Book {
-    String title;
-    String author;
-    double price;
+class Book {
+    public String x;
 
-    public Book(String title, String author , double price ) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
+    public void start(String name){
+        this.x=name;
     }
-
-    public static void main(String[] args) {
-        Book book = new Book("love","kk",20.5);
-        System.out.println(book.title);
-        System.out.println(book.author);
-        System.out.println(book.price);
+    class main{
+        public void show() {
+            System.out.println("Engine of "+x+" is running");
+        }
     }
 
 }

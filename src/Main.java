@@ -1,8 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Vehicle[] sar = {new Car(), new Motorcycle()};
-        for (Vehicle v : sar ){
-            v.start();
-        }
+        Phone ip = new iPhone();
+        Phone sam = new Samsung();
+
+        ip.call();
+        ip.sms();
+
+        System.out.println("==============");
+        sam.call();
+        sam.sms();
     }
 }

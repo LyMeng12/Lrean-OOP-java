@@ -1,13 +1,7 @@
-
 public class Main {
     public static void main(String[] args) {
-
-        Book c = new Book();
-
-        Book.main main = c.new main();
-
-        c.start("toyota");
-
-        main.show();
+        Employees sa = new Manager("meng",2000,200);
+        System.out.println(sa.name);
+        System.out.println(sa.getTotalSalary());
     }
 }

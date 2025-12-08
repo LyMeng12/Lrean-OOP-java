@@ -1,23 +1,24 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Company> list = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+        System.out.println("How Many");
+        System.out.print("Enter number: ");
+        int num = sc.nextInt();
 
-        list.add(new Admin("Meng",12000));
-        list.add(new Employ("Meng ly",12000));
-
-        for (Company company : list) {
-            if (company.getName().equals("Meng")) {
-                System.out.println("Admin");
-                System.out.println(company.getName() + " " + company.getSalary() );
-            }else {
-                System.out.println("Employ");
-                System.out.println(company.getName() + " " + company.getSalary() );
-            }
-
-
+        for (int i =0 ;i<num;i++) {
+            System.out.print((i+1)+"number:");
+            list.add(sc.nextInt());
         }
+        Collections.sort(list,Collections.reverseOrder());
+
+        for (int i =0 ;i<num;i++) {
+            System.out.print(list.get(i) + " ");
+        }
+
+
     }
 }

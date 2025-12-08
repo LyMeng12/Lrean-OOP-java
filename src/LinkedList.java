@@ -7,6 +7,8 @@ public class LinkedList {
         list.add("C");
         list.add("D");
 
+        list.addLast("T");
+        list.addFirst("AA");
         for(String s : list ){
             System.out.print(s+" ");
         }

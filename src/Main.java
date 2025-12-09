@@ -33,49 +33,43 @@ public class Main {
                     }break;
 //                    Insert
                     case 2:{
-                        System.out.print("Enter Number Index:");
-                        int index = sc.nextInt();
-                        while (!list.containsKey(index)){
-                            System.out.print("Enter Index again:");
-                            index = sc.nextInt();
-                        }
-                        System.out.print("Enter Number:");
-                        int number = sc.nextInt();
-                        while (!list.containsValue(number)){
-                            System.out.print("Enter Number again:");
-                            number = sc.nextInt();
-                        }
-                        list.put(index,number);
+
                     }break;
 //                    delete
                     case 3:{
-                        boolean chack = true;
-                        int number ;
-                        int index =0;
-                        while(chack){
-                            System.out.println("Enter Number:");
-                            number = sc.nextInt();
-                            for (Integer value : list.values()){
-                                if (value.equals(number)){
-                                    list.remove(index,number);
-                                    chack = false;
-                                    break;
-                                } else if (!value.equals(number)) {
-                                    chack = true;
-                                }
-                                index++;
-                            }
+                        for (Map.Entry<Integer,Integer> entry : list.entrySet()){
+                            System.out.print(entry.getKey() + ":" + entry.getValue()+" ");
                         }
-                    }break;
-//                    update
-                    case 4:{
-                        System.out.print("Enter Number:");
+                        System.out.println();
+
+                        System.out.println("Delete key number:");
                         int number = sc.nextInt();
-                        while (!list.containsKey(number)){
-                            System.out.print("Enter Number again:");
+                        while (!list.containsValue(number)){
+                            System.out.print("Delete Number again:");
                             number = sc.nextInt();
                         }
                         list.remove(number);
+                    }break;
+//                    update
+                    case 4:{
+                        for (Map.Entry<Integer,Integer> entry : list.entrySet()){
+                            System.out.print(entry.getKey() + ":" + entry.getValue()+" ");
+                        }
+                        System.out.println();
+                        System.out.print("Enter Number Key:");
+                        int key = sc.nextInt();
+                        while (!list.containsKey(key)){
+                            System.out.print("Enter Number again:");
+                            key = sc.nextInt();
+                        }
+
+                        System.out.print("Enter Number:");
+                        int number = sc.nextInt();
+                        while (list.containsValue(number)){
+                            System.out.print("Enter Number again:");
+                            number = sc.nextInt();
+                        }
+                        list.put(key,number);
 
                     }break;
 //                    display
@@ -102,7 +96,7 @@ public class Main {
                 if (choose == 1){
 
                     System.out.print("Number:");
-                    list.put(list.size(),sc.nextInt());
+                    list.put(list.size()+1,sc.nextInt());
 
                 }else if (choose == 2){
                     done=false;

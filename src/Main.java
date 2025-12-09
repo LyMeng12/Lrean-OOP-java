@@ -29,7 +29,7 @@ public class Main {
                             number = sc.nextInt();
                         }
 
-                        list.put(list.size(),number);
+                        list.put(list.size()+1,number);
                     }break;
 //                    Insert
                     case 2:{

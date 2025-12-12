@@ -1,63 +1,38 @@
 public class Student {
-    int id;
-    String name;
-    String gender;
+    int id ;
+    String name ;
+    String Sex;
     double Sa;
     double Java;
     double O;
     double fee;
 
-
-    public Student(int id, String name, String gender, double Sa, double Java, double O, double fee) {
+    public Student(int id , String name,String Sex,double Sa,double Java,double O,double fee) {
         this.id = id;
         this.name = name;
-        this.gender = gender;
-        this.Sa = Sa;
-        this.Java = Java;
-        this.O = O;
-        this.fee = fee;
+        this.Sex=Sex;
+        this.Sa=Sa;
+        this.Java=Java;
+        this.O=O;
+        this.fee=fee;
     }
     public double getFee() {
+        double reExam = 40;
+        double totalre=0;
+        if(Sa<50){
+            totalre+=1;
+        }
+        if(Java<50){
+            totalre+=1;
+        }
+        if(O<50){
+            totalre+=1;
+        }
+        fee +=totalre*reExam;
         return fee;
     }
 
-    public int getId() {
-        return id;
+    public void Payment(){
+        System.out.println(id+"    "+name+"         "+Sex +"  "+Sa+"  "+Java+"  "+O+"    "+getFee());
     }
-    public String getName() {
-        return name;
-    }
-    public String getGender() {
-        return gender;
-    }
-    public double getSa() {
-        return Sa;
-    }
-    public double getJava() {
-        return Java;
-    }
-    public double getO() {
-        return O;
-    }
-    public void diplay() {
-        double reExam = 40;
-        double total = 0;
-        double total2 ;
-
-            if (Sa < 50) {
-                total += 1;
-            }
-            if (Java < 50) {
-                total += 1;
-            }
-            if (O < 50) {
-                total += 1;
-            }
-            total2 = total * reExam;
-
-
-            System.out.println(getId() + " " + getName() + " " + getGender() + " " + getSa() + " " + getJava() + " " + getO() + " " + getFee());
-
-    }
-
 }

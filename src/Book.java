@@ -1,13 +1,17 @@
-class Book {
-    public String x;
+public class Book {
+    private int id;
+    private String title;
+    private double price;
 
-    public void start(String name){
-        this.x=name;
+    public Book(int id , String title , double price ){
+        this.id = id;
+        this.title=title;
+        this.price=price;
     }
-    class main{
-        public void show() {
-            System.out.println("Engine of "+x+" is running");
-        }
+    public double getPrice() {
+        return price;
     }
-
+    public void display(){
+        System.out.println("ID: "+id+"\tTitle: "+title+"\tPrice:$ "+getPrice());
+    }
 }

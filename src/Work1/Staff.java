@@ -5,17 +5,31 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Staff {
-    int id ;
-    String name ;
-    String Sex;
-    String Phone;
+    private int id ;
+    private String name ;
+    private String Sex;
+    private String Phone;
 
-    public Staff(int id, String name, String sex, String phone) {
+
+    public void setUser(int id,String name,String sex ,String phone ){
         this.id = id;
         this.name = name;
         this.Sex=sex;
         this.Phone=phone;
     }
+    public int getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getSex(){
+        return Sex;
+    }
+    public String getPhone(){
+        return Phone;
+    }
+
 
 
     public static void main(String[] args) {
@@ -124,7 +138,7 @@ public class Staff {
                             }
                             System.out.println("Part time 🦥");
                             for (Part part : partList) {
-                                part.Money();
+                                part.getPrint();
                             }
                         }break;
                         case "b":{
@@ -136,7 +150,7 @@ public class Staff {
                         case "c":{
                             System.out.println("Part time 🦥");
                             for (Part part : partList) {
-                                part.Money();
+                                part.getPrint();
                             }
                         }break;
                     }

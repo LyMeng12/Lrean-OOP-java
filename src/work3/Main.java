@@ -8,33 +8,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        File note = new File("note.txt");
-        try(Scanner sc = new Scanner(note)) {
 
-            if(!note.exists()) {
-                System.out.println("create note file");
-                note.createNewFile();
+        try {
+            File note = new File("note.txt");
+            if(note.delete()) {
+                System.out.println("delete failed");
             }else {
-                System.out.println("Already exists");
+                System.out.println("not delete exists");
             }
 
-            FileWriter fw = new FileWriter(note,true);
-            String noteText="";
-            do {
-                System.out.print("Enter note text/Shop: ");
-                noteText = in.nextLine();
-                if (!noteText.equals("shop")) {
-                    fw.write(noteText+"\n");
-                }
-            }while (!noteText.equals("shop"));
-            fw.close();
-
-            while(sc.hasNextLine()) {
-                String line = sc.nextLine();
-                if(!line.equals("")) {
-                    System.out.println("Name: "+line);
-                }
-            }
+//
 
 
         }catch (Exception e) {

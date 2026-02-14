@@ -7,23 +7,36 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            File note = new File("note.txt");
+        Scanner in = new Scanner(System.in);
+        File note = new File("note.txt");
+        try(Scanner sc = new Scanner(note)) {
+
             if(!note.exists()) {
                 System.out.println("create note file");
                 note.createNewFile();
             }else {
                 System.out.println("Already exists");
             }
+
             FileWriter fw = new FileWriter(note,true);
-            fw.write("Hello World");
+            String noteText="";
+            do {
+                System.out.print("Enter note text/Shop: ");
+                noteText = in.nextLine();
+                if (!noteText.equals("shop")) {
+                    fw.write(noteText+"\n");
+                }
+            }while (!noteText.equals("shop"));
             fw.close();
 
-            System.out.println("Name: " + note.getName());
-            System.out.println("Path: " + note.getAbsolutePath());
-            System.out.println("Readable: " + note.canRead());
-            System.out.println("Writable: " + note.canWrite());
-            System.out.println("Size: " + note.length() + " bytes");
+            while(sc.hasNextLine()) {
+                String line = sc.nextLine();
+                if(!line.equals("")) {
+                    System.out.println("Name: "+line);
+                }
+            }
+
+
         }catch (Exception e) {
             System.out.println("File not found");
         }

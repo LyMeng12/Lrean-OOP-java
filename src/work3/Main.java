@@ -1,27 +1,30 @@
 package work3;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
         try {
-            File note = new File("note.txt");
-            if(note.delete()) {
-                System.out.println("delete failed");
+            File students = new File("F:\\java\\OOP\\OOP\\src\\work3\\student.txt");
+            if (!students.exists()) {
+                students.createNewFile();
             }else {
-                System.out.println("not delete exists");
+                System.out.println("File already exists");
+            }
+            BufferedReader br = new BufferedReader(new FileReader(students));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
             }
 
-//
-
-
-        }catch (Exception e) {
-            System.out.println("File not found");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+
+
+
     }
 }

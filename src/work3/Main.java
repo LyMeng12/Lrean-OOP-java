@@ -5,26 +5,39 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
+        File students = new File("F:\\java\\OOP\\OOP\\src\\work3\\students.txt");
         try {
-            File students = new File("F:\\java\\OOP\\OOP\\src\\work3\\student.txt");
             if (!students.exists()) {
                 students.createNewFile();
-            }else {
-                System.out.println("File already exists");
-            }
-            BufferedReader br = new BufferedReader(new FileReader(students));
+                System.out.println("File does not exist");
+            }else{
+                System.out.println("File exists");
+                System.out.println("=============================");
+                FileOutputStream fos = new FileOutputStream(students);
+                do{
+                    System.out.print("Enter student name:");
+                    String line = in.nextLine();
+                    if (line.equals("stop")){
+                        break;
+                    }
+                    fos.write(line.getBytes());
+                    fos.write("\n".getBytes());
 
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
+                }while (true);
+                fos.close();
+                System.out.println("===================================");
+                FileInputStream fis = new FileInputStream(students);
+                int i;
+                System.out.println(fis.read());
+                while ((i = fis.read()) != -1) {
+                    System.out.print((char) i);
+                }
 
+
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
 }

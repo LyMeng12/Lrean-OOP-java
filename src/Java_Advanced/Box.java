@@ -1,16 +1,13 @@
 package Java_Advanced;
 
-public class Box <T,U>{
-    private T t;
-    private U u;
-    public Box(T t, U u){
-        this.t = t;
-        this.u = u;
+public class Box<T extends Number>{
+    T num;
+
+    public Box(T num) {
+        this.num = num;
     }
-    public T getT() {
-        return t;
+
+    public void print() {
+        System.out.println(num);
     }
-   public U getU() {
-        return u;
-   }
 }

@@ -10,10 +10,13 @@ public class Generics {
 //        Generics = គឺជាវិធីសាស្ត្រដែលអនុញ្ញាតឲ្យយើងសរសេរ class, interface, និង method ដែលអាចធ្វើការជាមួយ data type ផ្សេងៗបាន
 //                     ដោយមិនចាំបាច់សរសេរកូដដដែលៗ។
 
-//        Multiple Type Parameters<T,U>
-//                |
-        Box<String,Integer> nsj = new Box<>("meng",120);
-        System.out.println(nsj.getT()+" "+nsj.getU());
+        Box<Integer> n1 = new Box<>(10);
+        Box<Double> n2 = new Box<>(10.3);
+        Box<Float> n3 = new Box<>(10.3f);
+
+        n1.print();
+        n2.print();
+        n3.print();
 
     }
 }
